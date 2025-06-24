@@ -1,0 +1,25 @@
+{
+    "some_optional_field": null,
+    "some_object": {
+        "some_array": [],
+        "some_array_of_object": [
+            {
+                "some_other_array_of_object": [
+                    {
+                        "some_optional_detail": null,
+                        "another_detail": 12,
+                        "some_bool": false,
+                        "some_string": "Hey!",
+                        "some_url": "https://www.google.com",
+                        "some_name_url_pair": {
+                            "name": "Winifred",
+                            "url": "https://pokeapi.co/api/v2/evolution-trigger/1/"
+                        }
+                    }
+                ]
+            }
+        ],
+        "some_double": 3.14
+    },
+    "some_id": 1
+}
