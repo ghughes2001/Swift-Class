@@ -27,7 +27,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="7"/>
                                                 <connections>
-                                                    <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qeR-Vg-aY0"/>
+                                                    <action selector="digitUsed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fzg-dP-o0b"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPt-4q-Bnm">
@@ -35,7 +35,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="8"/>
                                                 <connections>
-                                                    <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d9y-Lo-5fU"/>
+                                                    <action selector="digitUsed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4z4-Ah-FTA"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKa-n5-9h6">
@@ -43,7 +43,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="9"/>
                                                 <connections>
-                                                    <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8A2-76-stk"/>
+                                                    <action selector="digitUsed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BX3-xE-Dbc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axI-Qq-pMd">
@@ -51,7 +51,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="/"/>
                                                 <connections>
-                                                    <action selector="operationTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2hB-Ui-8wO"/>
+                                                    <action selector="operationUsed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ltT-Lf-TDw"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -64,7 +64,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="4"/>
                                                 <connections>
-                                                    <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iLg-c8-Vmj"/>
+                                                    <action selector="digitUsed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xzl-VV-aew"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGI-qM-mTd">
@@ -72,7 +72,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="5"/>
                                                 <connections>
-                                                    <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9pM-Yd-Rg4"/>
+                                                    <action selector="digitUsed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uxv-tG-6Tc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQ7-Ai-5he">
@@ -80,7 +80,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="6"/>
                                                 <connections>
-                                                    <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pj4-Rp-gw6"/>
+                                                    <action selector="digitUsed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gbd-c6-GRP"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hq3-vt-r85">
@@ -88,7 +88,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="X"/>
                                                 <connections>
-                                                    <action selector="operationTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JlD-QS-Ywf"/>
+                                                    <action selector="operationUsed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tO9-Hw-RO5"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -101,7 +101,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="1"/>
                                                 <connections>
-                                                    <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ezv-MA-k0B"/>
+                                                    <action selector="digitUsed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WSW-Iw-yCV"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xy4-aO-nn9">
@@ -109,7 +109,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="2"/>
                                                 <connections>
-                                                    <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Zu-iw-Nrv"/>
+                                                    <action selector="digitUsed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SJs-ez-D8V"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Wj-iw-tuw">
@@ -117,7 +117,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="3"/>
                                                 <connections>
-                                                    <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J3Y-7r-lCp"/>
+                                                    <action selector="digitUsed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZxD-ZF-UKH"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peA-p2-6y4">
@@ -125,7 +125,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="-"/>
                                                 <connections>
-                                                    <action selector="operationTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="og6-ub-GT2"/>
+                                                    <action selector="operationUsed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VxN-E0-eWS"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -146,7 +146,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="0"/>
                                                 <connections>
-                                                    <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0le-88-TBT"/>
+                                                    <action selector="digitUsed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nB2-Km-A8x"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ha1-6h-tXg">
@@ -162,7 +162,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="+"/>
                                                 <connections>
-                                                    <action selector="operationTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xb5-pQ-k1a"/>
+                                                    <action selector="operationUsed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="biB-Gf-PAo"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -198,6 +198,9 @@
                             <constraint firstItem="pLJ-cj-z26" firstAttribute="top" secondItem="yN5-TP-e6z" secondAttribute="bottom" constant="20" id="ca8-dd-26J"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="displayLabel" destination="yN5-TP-e6z" id="z3Y-Fh-TyM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

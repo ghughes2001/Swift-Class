@@ -17,12 +17,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print("ViewController loaded")
     }
     
     @IBOutlet weak var displayLabel: UILabel!
     
-    @IBAction func digit(_ sender: UIButton)
-    {
+    @IBAction func digitUsed(_ sender: UIButton) {
         guard let digit = sender.currentTitle else { return }
         if EnteringNumber {
             displayLabel.text! += digit
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         currentDigit = Int(displayLabel.text!) ?? 0
     }
     
-    @IBAction func operationTapped(_ sender: UIButton) {
+    @IBAction func operationUsed(_ sender: UIButton) {
         guard let operations = sender.currentTitle else { return }
         
         if !EnteringNumber && operations == "-" && displayLabel.text! == "0" {
