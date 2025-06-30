@@ -8,79 +8,85 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var currentDigit: Int = 0
-    var previousDigit: Int = 0
-    var currentOperation: String?
-    var EnteringNumber: Bool = false
+    var expression: String = ""
+    var evaluated = false
+    var enteringNumber = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        display.text = "0"
     }
-
+    
     @IBOutlet weak var display: UILabel!
     
     @IBAction func digitUsed(_ sender: UIButton) {
-        guard let digit = sender.currentTitle else { return }
-        if EnteringNumber {
-            if display.text == "0" {
-                display.text = digit
-            }
-            else {
-                display.text! += digit
-            }
+        guard let digit = sender.configuration?.title else { return }
+        
+        if evaluated {
+            display.text = digit
+            expression = digit
+            evaluated = false
+        } else if enteringNumber {
+            display.text! += digit
+            expression += digit
         } else {
             display.text = digit
-            EnteringNumber = true
+            expression += digit
         }
-        currentDigit = Int(display.text!) ?? 0
+        enteringNumber = true
     }
     @IBAction func OperationUsed(_ sender: UIButton) {
-        guard let operations = sender.currentTitle else { return }
+        guard let operations = sender.configuration?.title  else { return }
         
-        if !EnteringNumber && operations == "-" && display.text! == "0" {
-            display.text = "-"
-            EnteringNumber = true
-            return
-        }
-        
-        previousDigit = currentDigit
-        currentOperation = operations
-        EnteringNumber = false
-    }
-    @IBAction func enterClicked(_ sender: UIButton) {
-        guard let operation = currentOperation else { return }
-        let result: Int
-        switch operation {
+        let operationToTString: String
+        switch operations {
         case "+":
-            result = previousDigit + currentDigit
+            operationToTString = "+"
         case "-":
-            result = previousDigit - currentDigit
+            operationToTString = "-"
         case "X":
-            result = previousDigit * currentDigit
+            operationToTString = "*"
         case "/":
-            guard currentDigit != 0 else {
-                display.text = "Error"
-                EnteringNumber = false
-                return
-            }
-            result = previousDigit / currentDigit
-        default:
+            operationToTString = "/"
+        default :
             return
         }
-        display.text = "\(result)"
-        display.setNeedsLayout()
-        display.layoutIfNeeded()
-        currentDigit = result
-        EnteringNumber = false
+        
+        if evaluated {
+            evaluated = false
+        } else if !enteringNumber && expression.last.map({ "+-*/".contains($0) }) == true {
+            expression.removeLast()
+        }
+        expression += operationToTString
+        enteringNumber = false
+    }
+    
+    @IBAction func enterClicked(_ sender: UIButton) {
+        let mathExp = NSExpression(format: expression)
+        if let result = mathExp.expressionValue(with: nil, context: nil) as? NSNumber {
+            let doubleResult = result.doubleValue
+            
+            if doubleResult.isInfinite || doubleResult.isNaN {
+                display.text = "Error"
+                expression = ""
+            } else {
+                display.text = "\(Int(doubleResult))"
+                expression = "\(Int(doubleResult))"
+            }
+            evaluated = true
+        } else {
+            display.text = "Error"
+            expression = ""
+            evaluated = false
+        }
+        enteringNumber = false
     }
     
     @IBAction func clearClicked(_ sender: UIButton) {
-        currentDigit = 0
-        previousDigit = 0
-        currentOperation = nil
+        expression = ""
         display.text = "0"
-        EnteringNumber = false
+        enteringNumber = false
+        evaluated = false
     }
 }
 
