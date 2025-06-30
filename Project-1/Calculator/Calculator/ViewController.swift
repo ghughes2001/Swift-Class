@@ -17,7 +17,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("ViewController loaded")
+        
+        displayLabel.frame = CGRect(x:20,y:100,width:300,height:60)
+        
+        displayLabel.alpha = 1.0
+        displayLabel.isHidden = false
     }
     
     @IBOutlet weak var displayLabel: UILabel!
@@ -25,7 +29,12 @@ class ViewController: UIViewController {
     @IBAction func digitUsed(_ sender: UIButton) {
         guard let digit = sender.currentTitle else { return }
         if EnteringNumber {
-            displayLabel.text! += digit
+            if displayLabel.text == "0" {
+                displayLabel.text = digit
+            }
+            else {
+                displayLabel.text! += digit
+            }
         } else {
             displayLabel.text = digit
             EnteringNumber = true
@@ -58,11 +67,18 @@ class ViewController: UIViewController {
         case "X":
             result = previousDigit * currentDigit
         case "/":
+            guard currentDigit != 0 else {
+                displayLabel.text = "Error"
+                EnteringNumber = false
+                return
+            }
             result = previousDigit / currentDigit
         default:
             return
         }
         displayLabel.text = "\(result)"
+        displayLabel.setNeedsLayout()
+        displayLabel.layoutIfNeeded()
         currentDigit = result
         EnteringNumber = false
     }

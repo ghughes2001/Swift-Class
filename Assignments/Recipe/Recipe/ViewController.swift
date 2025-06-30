@@ -19,7 +19,7 @@ let _data: [Recipe] = [
     Recipe(title: "French Toast",
            imageTitle: "french_toast",
            description: "Classic French Toast With A Hint Of Cinnamon and Vanilla Extract!",
-           ingredients: [" Loaf of Bread", " 3 Large Eggs", " 1/2 cup Milk", " 1 Teaspoon of Vanilla extract", " 1 Teaspoon Of Cinnamon (Can Add More If You Like)"],
+           ingredients: [" Loaf of Bread", "3 Large Eggs", " 1/2 cup Milk", " 1 Teaspoon of Vanilla extract", " 1 Teaspoon Of Cinnamon (Can Add More If You Like)"],
            instructions:  ["1) Place a skillet on a burner and trun on to medium",
                            "2) In a large bowl, whisk the eggs and milk",
                            "3) Add and whisk the vanilla extract and cinnamon",
@@ -97,9 +97,12 @@ class RecipeDetailsPage: UIViewController {
         model.ingredients.forEach { ingredient in
             let label = UILabel()
             label.text = ingredient
+            label.numberOfLines = 0
             ingredientsstack.addArrangedSubview(label)
         }
         stepsTable.dataSource = self
+        stepsTable.rowHeight = UITableView.automaticDimension
+        stepsTable.estimatedRowHeight = 100
     }
 }
 
