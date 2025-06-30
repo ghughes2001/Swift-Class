@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum calculator2Error: Error {
+    case invalidExpression
+    case divisionByZero
+}
+
 class ViewController: UIViewController {
     var expression: String = ""
     var evaluated = false
@@ -15,6 +20,79 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         display.text = "0"
+    }
+    
+    func operatorPriority(_ op: Character) -> Int {
+        switch op {
+        case "+", "-":
+            return 1
+        case "*", "/":
+            return 2
+        default:
+            return 0
+        }
+    }
+    func applyingOperator(_ a: Int, _ b: Int, _ op: Character) throws -> Int {
+        switch op {
+        case "+":
+            return a + b
+        case "-":
+            return a - b
+        case "*":
+            return a * b
+        case "/":
+            if b == 0 { throw calculator2Error.divisionByZero }
+            return a / b
+        default:
+            throw calculator2Error.invalidExpression
+        }
+    }
+    func evaluate(_ expr: String) throws -> Int {
+        var values = [Int]()
+        var operators: [Character] = []
+        let characters = Array(expr)
+        var index = 0;
+        
+        while index < characters.count {
+            let c = characters[index]
+            if c.isWhitespace {
+                index += 1
+                continue
+            }
+            if c.isNumber {
+                var val = 0
+                while index < characters.count && characters[index].isNumber {
+                    val = val * 10 + characters[index].wholeNumberValue!
+                    index += 1
+                }
+                values.append(val)
+                continue
+            }
+            if "+-*/".contains(c) {
+                while let last = operators.last, operatorPriority(last) >= operatorPriority(c) {
+                    guard values.count >= 2 else { throw calculator2Error.invalidExpression }
+                    let b = values.removeLast()
+                    let a = values.removeLast()
+                    let op = operators.removeLast()
+                    let result = try applyingOperator(a, b, op)
+                    values.append(result)
+                }
+                operators.append(c)
+            } else {
+                throw calculator2Error.invalidExpression
+            }
+            index += 1
+        }
+        while !operators.isEmpty {
+            guard values.count >= 2 else { throw calculator2Error.invalidExpression }
+            let b = values.removeLast()
+            let a = values.removeLast()
+            let op = operators.removeLast()
+            let result = try applyingOperator(a, b, op)
+            values.append(result)
+        }
+        guard values.count == 1 else { throw calculator2Error.invalidExpression }
+        return values[0]
     }
     
     @IBOutlet weak var display: UILabel!
@@ -62,19 +140,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func enterClicked(_ sender: UIButton) {
-        let mathExp = NSExpression(format: expression)
-        if let result = mathExp.expressionValue(with: nil, context: nil) as? NSNumber {
-            let doubleResult = result.doubleValue
-            
-            if doubleResult.isInfinite || doubleResult.isNaN {
-                display.text = "Error"
-                expression = ""
-            } else {
-                display.text = "\(Int(doubleResult))"
-                expression = "\(Int(doubleResult))"
-            }
+        do {
+            let result = try evaluate(expression)
+            display.text = "\(result)"
+            expression = "\(result)"
             evaluated = true
-        } else {
+        } catch calculator2Error.divisionByZero {
+            display.text = "Error"
+            expression = ""
+            evaluated = false
+        } catch {
             display.text = "Error"
             expression = ""
             evaluated = false
