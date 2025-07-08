@@ -26,6 +26,7 @@ final class ChatAppTests: XCTestCase {
 		//ACT
 		model.addContact(newContact: "Mike")
 		let allThreads = model.getAllThreads()
+        print("Contacts in test_AddContact: \(allThreads)")
 		//ASSERT
 		XCTAssert(allThreads.count == 1)
 		XCTAssert(allThreads[0] == "Mike")
@@ -57,7 +58,13 @@ final class ChatAppTests: XCTestCase {
 		XCTAssert(messages.count == 0)
 	}
 
-//	func test_SendMessageToContact() throws {
-//		XCTAssert(false)
-//	}
+	func test_SendMessageToContact() throws {
+        model.addContact(newContact: "Grant")
+        model.sendingMessage(to: "Grant", text: "The time is n..e..a....r......")
+        
+        let messages = model.getMessages(forContact: "Grant")
+        XCTAssertEqual(messages.count, 1)
+        XCTAssertEqual(messages[0].text, "The time is n..e..a....r......")
+        XCTAssertTrue(messages[0].isFromMe())
+	}
 }

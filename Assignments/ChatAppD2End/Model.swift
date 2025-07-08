@@ -33,6 +33,7 @@ class Model {
 	func addContact(newContact: String) {
 		contacts.append(newContact)
 		threads[newContact] = [Message]()
+        print("Contact added: \(newContact), contacts now: \(contacts)")
 		delegate?.onContactsChanged()
 	}
 	
@@ -45,4 +46,11 @@ class Model {
 		return threads[forContact] ?? []
 	}
 	
+    func sendingMessage(to contact: String, text: String)
+    {
+        print("Sending '\(text)' to \(contact)")
+        guard contacts.contains(contact), !text.isEmpty else { return }
+        let messages = Message(from: ME, to: contact, text: text, sent_at: Date())
+        addMessage(messages)
+    }
 }

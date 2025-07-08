@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		33F14A182E1C41FC00E25AEF /* modle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F14A172E1C41FA00E25AEF /* modle.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		333B768F2E126A1200A2F1D7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		333B76782E126A1000A2F1D7 /* calculator2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calculator2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		333B768E2E126A1200A2F1D7 /* calculator2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calculator2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		333B76982E126A1200A2F1D7 /* calculator2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calculator2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		33F14A172E1C41FA00E25AEF /* modle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -88,6 +93,7 @@
 		333B766F2E126A1000A2F1D7 = {
 			isa = PBXGroup;
 			children = (
+				33F14A172E1C41FA00E25AEF /* modle.swift */,
 				333B767A2E126A1000A2F1D7 /* calculator2 */,
 				333B76912E126A1200A2F1D7 /* calculator2Tests */,
 				333B769B2E126A1200A2F1D7 /* calculator2UITests */,
@@ -249,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F14A182E1C41FC00E25AEF /* modle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

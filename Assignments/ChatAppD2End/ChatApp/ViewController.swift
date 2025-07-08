@@ -23,6 +23,9 @@ class ContactsVC: UIViewController, ModelDelegate {
 		model.addContact(newContact: "Tester")
 		model.addMessage(Message(from: "Tester", to: ME, text: "Hello", sent_at: Date(timeIntervalSince1970: 0)))
 		model.addMessage(Message(from: ME, to: "Tester", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque finibus, metus id blandit tincidunt, ligula dolor convallis purus, eget efficitur arcu lectus non risus. Nunc dictum massa vel quam aliquet tincidunt.", sent_at: Date(timeIntervalSince1970: 1)))
+        
+        model.addContact(newContact: "Grant")
+        model.sendingMessage(to: "Grant", text: "The time is n..e..a....r......")
 	}
 	
 	@IBAction func addContactPressed(_ sender: Any) {
@@ -31,7 +34,10 @@ class ContactsVC: UIViewController, ModelDelegate {
 		alert.addAction(.init(title: "Save", style: .default, handler: { action in
 			let contactName = alert.textFields![0].text ?? ""
 			if !contactName.isEmpty {
-				self.model.addContact(newContact: contactName)
+                DispatchQueue.main.async {
+                    self.model.addContact(newContact: contactName)
+                    self.tableView.reloadData()
+                        }
 			}
 		}))
 		alert.addAction(.init(title: "Cancel", style: .destructive))
@@ -72,8 +78,15 @@ class ThreadVC: UIViewController, UITableViewDataSource {
 	var contact: String! // Model of the individual Thread Page
 	
 	@IBOutlet weak var tableView: UITableView!
-	
-	override func viewDidLoad() {
+    @IBOutlet weak var messaegField: UITextField!
+    @IBAction func sending(_ sender: Any) {
+        guard let text = messaegField.text, !text.isEmpty else { return }
+        model.sendingMessage(to: contact, text: text)
+        messaegField.text = ""
+        tableView.reloadData()
+    }
+    
+    override func viewDidLoad() {
 		super.viewDidLoad()
 		tableView.dataSource = self
 		title = contact

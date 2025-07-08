@@ -147,6 +147,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="X0U-7g-DN0">
+                                <rect key="frame" x="0.0" y="423" width="393" height="64.333333333333314"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PAk-AR-hk1">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Htj-jl-nj6">
+                                        <rect key="frame" x="0.0" y="30.000000000000004" width="393" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="SEND"/>
+                                        <connections>
+                                            <action selector="sending:" destination="H8M-dX-ctX" eventType="touchUpInside" id="U0o-a0-msZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g5o-2g-dBZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -154,10 +172,19 @@
                             <constraint firstItem="1ng-ze-Iwx" firstAttribute="leading" secondItem="g5o-2g-dBZ" secondAttribute="leading" id="1M9-24-Zc5"/>
                             <constraint firstItem="g5o-2g-dBZ" firstAttribute="trailing" secondItem="1ng-ze-Iwx" secondAttribute="trailing" id="1jV-1d-lp6"/>
                             <constraint firstItem="1ng-ze-Iwx" firstAttribute="top" secondItem="g5o-2g-dBZ" secondAttribute="top" id="3Tg-Zp-eLc"/>
+                            <constraint firstItem="X0U-7g-DN0" firstAttribute="top" secondItem="g5o-2g-dBZ" secondAttribute="top" constant="305" id="CKT-MB-J9R"/>
+                            <constraint firstItem="1ng-ze-Iwx" firstAttribute="leading" secondItem="g5o-2g-dBZ" secondAttribute="leading" id="Eix-6Y-WwR"/>
+                            <constraint firstItem="1ng-ze-Iwx" firstAttribute="top" secondItem="g5o-2g-dBZ" secondAttribute="top" id="H2V-zf-AeR"/>
+                            <constraint firstItem="g5o-2g-dBZ" firstAttribute="trailing" secondItem="X0U-7g-DN0" secondAttribute="trailing" id="Ifa-41-G6U"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="X0U-7g-DN0" secondAttribute="bottom" constant="296.67000000000002" id="PXG-mt-4Mc"/>
                             <constraint firstItem="g5o-2g-dBZ" firstAttribute="bottom" secondItem="1ng-ze-Iwx" secondAttribute="bottom" id="SbH-Vv-oq2"/>
+                            <constraint firstItem="1ng-ze-Iwx" firstAttribute="bottom" secondItem="g5o-2g-dBZ" secondAttribute="bottom" id="bpI-dR-z7p"/>
+                            <constraint firstItem="1ng-ze-Iwx" firstAttribute="trailing" secondItem="g5o-2g-dBZ" secondAttribute="trailing" id="brp-YZ-7ia"/>
+                            <constraint firstItem="X0U-7g-DN0" firstAttribute="leading" secondItem="g5o-2g-dBZ" secondAttribute="leading" id="eW8-cJ-kij"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="messaegField" destination="PAk-AR-hk1" id="RE9-E4-sLE"/>
                         <outlet property="tableView" destination="1ng-ze-Iwx" id="V1C-Hs-Aoo"/>
                     </connections>
                 </viewController>
