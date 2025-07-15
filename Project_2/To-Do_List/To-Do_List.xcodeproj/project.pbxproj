@@ -35,24 +35,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		33BD57FF2E2615560052543E /* Exceptions for "To-Do_List" folder in "To-Do_List" target */ = {
+		33BD58622E26ECF20052543E /* Exceptions for "To-Do_List" folder in "To-Do_List" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				AppDelegate.swift,
+				SceneDelegate.swift,
+				TaskListView.swift,
+				ViewController.swift,
 			);
 			target = 33BD57D62E2615540052543E /* To-Do_List */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		33BD57D92E2615540052543E /* To-Do_List */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				33BD57FF2E2615560052543E /* Exceptions for "To-Do_List" folder in "To-Do_List" target */,
-			);
-			path = "To-Do_List";
-			sourceTree = "<group>";
-		};
 		33BD57F02E2615560052543E /* To-Do_ListTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "To-Do_ListTests";
@@ -61,6 +56,14 @@
 		33BD57FA2E2615560052543E /* To-Do_ListUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "To-Do_ListUITests";
+			sourceTree = "<group>";
+		};
+		33BD58602E26EC9D0052543E /* To-Do_List */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				33BD58622E26ECF20052543E /* Exceptions for "To-Do_List" folder in "To-Do_List" target */,
+			);
+			path = "To-Do_List";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -94,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				33BD580B2E2615610052543E /* model.swift */,
-				33BD57D92E2615540052543E /* To-Do_List */,
+				33BD58602E26EC9D0052543E /* To-Do_List */,
 				33BD57F02E2615560052543E /* To-Do_ListTests */,
 				33BD57FA2E2615560052543E /* To-Do_ListUITests */,
 				33BD57D82E2615540052543E /* Products */,
@@ -125,9 +128,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				33BD57D92E2615540052543E /* To-Do_List */,
 			);
 			name = "To-Do_List";
 			packageProductDependencies = (
