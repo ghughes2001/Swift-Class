@@ -1,0 +1,12 @@
+[
+    {
+        "product_name": "Bananas",
+        "product_cost": 200,
+        "description": "A banana grown in Ecuador."
+    },
+    {
+        "product_name": "Oranges",
+        "product_cost": 100,
+        "description": "A juicy orange."
+    }
+]

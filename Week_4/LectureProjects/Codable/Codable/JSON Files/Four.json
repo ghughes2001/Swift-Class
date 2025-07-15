@@ -1,0 +1,9 @@
+{
+    "Banana": {
+        "points": 200,
+        "description": "A banana grown in Ecuador."
+    },
+    "Orange": {
+        "points": 100
+    }
+}
